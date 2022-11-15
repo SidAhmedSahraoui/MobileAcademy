@@ -66,21 +66,21 @@ const Login = ({navigation}: any) => {
         </Content>
 
         <VStack alignItems="center" style={styles.form} space={5}>
-          <TextInput size="lg" name="Email" wide={true} />
-          <TextInput size="lg" name="Password" wide={true} />
-          <ButtonSign text="Login" wide={true} navigation={handleLinkDrawer} />
+          <TextInput size="lg" name="Email" wide />
+          <TextInput size="lg" name="Password" wide />
+          <ButtonSign text="Login" wide navigation={handleLinkDrawer} />
         </VStack>
 
         <DividerCon wide={true} />
 
         <VStack alignItems="center" style={styles.social} space={5}>
-          <Social text="Sign up with Facebook" social={true} wide={true} />
-          <Social text="Sign up with Google" wide={true} />
+          <Social text="Sign up with Facebook" social wide />
+          <Social text="Sign up with Google" wide />
         </VStack>
 
         <HStack style={styles.forget} alignItems="center" space={1}>
           <Text style={styles.questionText}>Did you forget your password?</Text>
-          <Pressable onPress={() => navigation.navigate('ForgetPassword')}>
+          <Pressable onPress={() => navigation.navigate('Forget')}>
             <Text style={styles.questionTextColor}>Forget password</Text>
           </Pressable>
         </HStack>
