@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Text, Box, VStack, ScrollView, Pressable, HStack} from 'native-base';
 import Header from '../components/Header';
 import Content from '../components/Content';
@@ -9,6 +9,7 @@ import Social from '../components/Social';
 import Support from '../components/Support';
 import {colors} from '../assets/colors';
 import StatusBar from '../components/StatusBar';
+//import toast, {useToaster} from 'react-hot-toast';
 
 const Login = ({navigation}: any) => {
   const styles = {
@@ -51,13 +52,22 @@ const Login = ({navigation}: any) => {
   };
 
   const handleLinkDrawer = () => {
-    navigation.navigate('DrawerCon');
+    navigation.navigate('DrawerComponent');
   };
+
+  //const {toasts, handlers} = useToaster();
+  //const {startPause, endPause} = handlers;
+
+  
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <Box style={styles.box} alignItems="center">
         <StatusBar />
+        {
+          
+        }
+
         <Header />
         <Content head="Welcome">
           <Text style={styles.text} textAlign="center">

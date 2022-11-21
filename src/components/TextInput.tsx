@@ -1,4 +1,3 @@
-import {View, Text} from 'react-native';
 import React from 'react';
 import {Input} from 'native-base';
 import {TextInputProps} from '../types';

@@ -49,7 +49,7 @@ const Forget = ({navigation}: any) => {
   };
 
   const handleLinkDrawer = () => {
-    navigation.navigate('DrawerCon');
+    navigation.navigate('DrawerComponent');
   };
 
   return (

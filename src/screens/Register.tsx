@@ -49,7 +49,7 @@ const Register = ({navigation}: any) => {
   };
 
   const handleLinkDrawer = () => {
-    navigation.navigate('DrawerCon');
+    navigation.navigate('DrawerComponent');
   };
 
   return (
