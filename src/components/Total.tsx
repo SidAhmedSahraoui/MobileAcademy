@@ -1,8 +1,9 @@
 import React from 'react';
 import {Box, HStack, Text, VStack, Pressable} from 'native-base';
-import Entypo from 'react-native-vector-icons/Entypo';
 import {colors} from '../assets/colors';
 import TotalItem from './TotalItem';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Total = ({navigation: {goBack}}: any) => {
   const styles = {
@@ -38,7 +39,7 @@ const Total = ({navigation: {goBack}}: any) => {
         <Pressable shadow={3} style={styles.btn} onPress={() => goBack()}>
           <HStack alignItems="center" justifyContent="center">
             <Text style={styles.btnText}>Shipped</Text>
-            <Entypo size={25} name="chevron-small-down" color={colors.white} />
+            <FontAwesomeIcon size={20} icon={faChevronDown} color={colors.white} />
           </HStack>
         </Pressable>
       </Box>

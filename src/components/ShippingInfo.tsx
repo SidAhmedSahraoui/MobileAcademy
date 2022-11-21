@@ -3,6 +3,8 @@ import {Box, Heading, HStack, Text, VStack} from 'native-base';
 import {colors} from '../assets/colors';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faChevronDown, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 const ShippingInfo = () => {
   const styles = {
@@ -50,15 +52,15 @@ const ShippingInfo = () => {
       </VStack>
 
       <HStack alignItems="center" space={3} style={styles.bottom}>
-        <MaterialCommunityIcons
+        <FontAwesomeIcon
           size={22}
-          name="information-outline"
+          icon={faInfoCircle}
           color={colors.blackDefault}
         />
         <Text style={styles.text}>Spedizione Corriere</Text>
-        <Entypo
+        <FontAwesomeIcon
           size={22}
-          name="chevron-small-down"
+          icon={faChevronDown}
           color={colors.blackDefault}
         />
       </HStack>

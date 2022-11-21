@@ -2,6 +2,8 @@ import {HStack, Spacer, Text, VStack} from 'native-base';
 import Entypo from 'react-native-vector-icons/Entypo';
 import React from 'react';
 import {colors} from '../assets/colors';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 interface TotalItemProps {
   head: string;
@@ -35,9 +37,9 @@ const TotalItem = ({head, num, arrow}: TotalItemProps) => {
       <HStack alignItems="center" space={2}>
         <Text style={styles.num}>{num}</Text>
         {arrow && (
-          <Entypo
+          <FontAwesomeIcon
             size={22}
-            name="chevron-small-down"
+            icon={faChevronDown}
             color={colors.blackDefault}
           />
         )}

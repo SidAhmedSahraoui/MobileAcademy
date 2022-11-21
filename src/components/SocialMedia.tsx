@@ -24,12 +24,12 @@ const SocialMedia = ({option, text}: SocialMediaProps) => {
     <HStack space={5} alignItems="center">
       {option ? (
         <Image
-          source={require(`../asset/images/whatapp.png`)}
+          source={require(`../assets/img/whatapp.png`)}
           alt="whatapp"
           size={8}
         />
       ) : (
-        <Image source={require(`../asset/images/tel.png`)} alt="tel" size={8} />
+        <Image source={require(`../assets/img/tel.png`)} alt="tel" size={8} />
       )}
       <Text style={styles.socialText}>{text}</Text>
     </HStack>

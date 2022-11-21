@@ -23,12 +23,12 @@ const ProductsNav = ({navigation} : any) => {
       <StatusBarCon />
       <HeroHead title='Products' navigation={navigation} option={true} />
       <Stack.Navigator
-          initialRouteName="Products"
+          initialRouteName="ProductsPage"
           screenOptions={{
               headerShown: false,
           }}
       >
-          <Stack.Screen name="Products" component={Products} />
+          <Stack.Screen name="ProductsPage" component={Products} />
           <Stack.Screen name="AddProduct" component={AddProduct} />
       </Stack.Navigator>
     </Box>
