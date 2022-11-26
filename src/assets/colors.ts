@@ -14,5 +14,6 @@ export const colors = {
     tabnull : "#3B5166",
     iconInput : "#8592A0",
     live : "#E0FFF6",
-    blue : "#6979F8"
+    blue : "#6979F8",
+    danger: "#dc5f5f"
 }

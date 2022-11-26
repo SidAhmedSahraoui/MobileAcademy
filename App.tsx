@@ -1,7 +1,8 @@
 import React from 'react';
-
+import {Provider} from 'react-redux';
+import {store} from './src/redux/store';
 // navigation
-import {Drawer, NativeBaseProvider} from 'native-base';
+import {NativeBaseProvider} from 'native-base';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -9,8 +10,6 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Login from './src/screens/Login';
 import Register from './src/screens/Register';
 import Forget from './src/screens/Forget';
-import Dashboard from './src/screens/Dashboard';
-import Products from './src/screens/Products';
 import DrawerComponent from './src/navigator/DrawerComponent';
 import OrderInfo from './src/screens/OrderInfo';
 
@@ -18,7 +17,8 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NativeBaseProvider>
+    <Provider store={store}>
+      <NativeBaseProvider>
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName="Login"
@@ -30,9 +30,9 @@ export default function App() {
           <Stack.Screen name="Forget" component={Forget} />
           <Stack.Screen name="DrawerComponent" component={DrawerComponent} />
           <Stack.Screen name="OrderInfo" component={OrderInfo} />
-
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
+    </Provider>
   );
 }
