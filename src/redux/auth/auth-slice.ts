@@ -29,7 +29,7 @@ export const authSlice = createSlice({
       // Then we validate the form
       const {name, password} = current(state);
 
-      // Validating the username or email
+      // Validating the title
       if (!name) {
         state.error = "Email or username can't be empty";
 

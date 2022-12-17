@@ -9,15 +9,6 @@ import Social from '../components/Social';
 import Support from '../components/Support';
 import {colors} from '../assets/colors';
 import StatusBarCon from '../components/StatusBar';
-// redux
-import {
-  changeEmail,
-  changeUsername,
-  changePassword,
-  registerUser,
-  resetState,
-} from '../redux/auth/register-slice';
-import {useAppDispatch, useAppSelector} from '../redux/hooks';
 
 const Register = ({navigation}: any) => {
   const styles = {
@@ -55,15 +46,7 @@ const Register = ({navigation}: any) => {
       color: colors.primary,
       fontFamily: 'SourceSansPro-Regular',
     },
-    error: {
-      color: colors.danger,
-    },
   };
-
-  const dispatch = useAppDispatch();
-  const {id, email, username, password, isAuth, error} = useAppSelector(
-    state => state.register,
-  );
 
   const handleLinkDrawer = () => {
     navigation.navigate('DrawerComponent');
@@ -80,34 +63,12 @@ const Register = ({navigation}: any) => {
             online in pochi minuti. {'\n'}Nessuna carta di credito richiesta.
           </Text>
         </Content>
-        {error !== '' ? (
-          <Text style={styles.error} textAlign="center">
-            {error}
-          </Text>
-        ) : null}
+
         <VStack alignItems="center" style={styles.form} space={4}>
-          <TextInput
-            size="lg"
-            name="Name and Surname"
-            value={username}
-            change={(newValue: string) => dispatch(changeUsername(newValue))}
-          />
-          <TextInput
-            size="lg"
-            name="Email"
-            value={email}
-            change={(newValue: string) => dispatch(changeEmail(newValue))}
-          />
-          <TextInput
-            size="lg"
-            name="Password"
-            value={password}
-            change={(newValue: string) => dispatch(changePassword(newValue))}
-          />
-          <ButtonSign
-            text="Create your shop"
-            navigation={() => dispatch(registerUser())}
-          />
+          <TextInput size="lg" name="Name and Surname" />
+          <TextInput size="lg" name="Email" />
+          <TextInput size="lg" name="Password" />
+          <ButtonSign text="Create your shop" navigation={handleLinkDrawer} />
         </VStack>
 
         <Divider />
