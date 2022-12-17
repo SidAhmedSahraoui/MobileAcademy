@@ -1,10 +1,8 @@
-import {Action, ThunkAction, configureStore} from '@reduxjs/toolkit';
-import auth from './auth/auth-slice';
-import register from './auth/register-slice';
+import { Action, ThunkAction, configureStore } from "@reduxjs/toolkit";
+
 export const store = configureStore({
   reducer: {
-    auth,
-    register,
+
   },
   devTools: true,
 });

@@ -2,7 +2,6 @@ import axios, {AxiosError, AxiosResponse} from 'axios';
 import {createSlice, PayloadAction, current} from '@reduxjs/toolkit';
 import {AppThunk, RootState} from '../store';
 import {NewUser} from '../../types/index';
-import { supabase } from '../../lib/initSupabase'
 
 const initialState: NewUser = {
   id: '',
@@ -70,33 +69,20 @@ export const {
   UserFail,
 } = registerSlice.actions;
 
-export const selectCreateUser = (state: RootState) => state.register;
+export const selectCreateUser = (state: RootState) => state.auth;
 
 export const registerUser = (): AppThunk => async (dispatch, getState) => {
   dispatch(validateForm());
 
-  
+  const {email, username, password} = selectCreateUser(getState());
 
-  const {email, username, password, error} = selectCreateUser(getState());
-
-  console.log(email)
   // If the form is valid, we send a request to the api
- if (error === '') {
   try {
     const res: AxiosResponse = await axios.post('/register', {
       email,
       username,
       password,
     });
-   /* const { data, error} = await supabase.from("users").insert([
-      {
-        email: email,
-        username: username,
-        password: password
-      }
-    ])
-
-    console.log(error)*/
 
     dispatch(UserSuccess(res.data));
   } catch (error) {
@@ -105,7 +91,6 @@ export const registerUser = (): AppThunk => async (dispatch, getState) => {
 
     dispatch(UserFail('Something unexpected happend!'));
   }
- }
 };
 
 export default registerSlice.reducer;
